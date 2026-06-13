@@ -3,7 +3,7 @@ let currentObjectiveCoreKeywords = [];
 let activeSessionActive = false;
 let isBreathingSequenceActive = false;
 let engine = null;
-const WEBSITE_URL = "https://brainsync.sub-sync.ca/#insights";
+const WEBSITE_URL = "https://brainsync.sub-sync.ca";
 
 // FOCUS_BANDS - keep in sync with popup.js and content.js
 const FOCUS_BANDS = [
