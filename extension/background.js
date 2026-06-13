@@ -3,7 +3,7 @@ let currentObjectiveCoreKeywords = [];
 let activeSessionActive = false;
 let isBreathingSequenceActive = false;
 let engine = null;
-const WEBSITE_URL = "http://localhost:3000";
+const WEBSITE_URL = "https://brainsync.sub-sync.ca/#insights";
 
 // FOCUS_BANDS - keep in sync with popup.js and content.js
 const FOCUS_BANDS = [
@@ -566,11 +566,11 @@ chrome.runtime.onInstalled.addListener(() => {
         chrome.scripting.executeScript({
           target: { tabId: tab.id },
           files: ["content.js"]
-        }).catch(() => {});
+        }).catch(() => { });
         chrome.scripting.insertCSS({
           target: { tabId: tab.id },
           files: ["content.css"]
-        }).catch(() => {});
+        }).catch(() => { });
       }
     }
   });
@@ -660,7 +660,7 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
       message: "Your focus session has finished! Complete your flow."
     });
 
-    chrome.runtime.sendMessage({ action: "play_alarm" }).catch(() => {});
+    chrome.runtime.sendMessage({ action: "play_alarm" }).catch(() => { });
     playAudioOffscreen(data.brainsyncSettings || {});
 
     chrome.tabs.query({}, (tabs) => {
@@ -699,7 +699,7 @@ async function playDirectOffscreenSound(action, soundType) {
     action: action,
     soundType: soundType,
     volume: 0.5
-  }).catch(() => {});
+  }).catch(() => { });
 }
 
 async function triggerBreathingExercise(session) {
